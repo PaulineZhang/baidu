@@ -1,0 +1,128 @@
+body{
+	font-family: "Microsoft Yahei";
+	font-size: 16px;
+	line-height: 1.5em;
+	background-color:rgb(222,222,222); 
+	min-width: 500px;
+}
+body p{
+	text-indent: 2em;
+}
+header footer{
+	width: 100%;
+}
+header{
+	background-color: rgb(51,51,51);
+	height: 80px;
+}
+footer{
+	background-color:  rgb(51,51,51);
+	height: 50px;
+	text-align: center;
+	color: white;
+	font-size: 80%;
+}
+
+header a{
+	text-decoration: none;
+	color:rgb(255,255,255);
+}
+header img{
+	margin: 15px 30px;
+	height: 50px;
+}
+#topLink{
+	margin: 30px 30px 0 0;
+	float: right;
+}
+#topLink li{
+	display: inline-block;
+	margin-left: 12px;
+}
+#topLink a:hover{
+	text-decoration:underline;
+}
+.side-left{
+	float: right;
+	background-color: white;
+	font-size: 14px;
+	width: 400px;
+	margin: 20px;
+	padding: 0;
+}
+.side-left h2{
+	font-size: 18px;
+	margin-left: 20px;
+}
+.form-info{
+	float: left;
+	width: 30%;
+	text-align: right;
+}
+.tips{
+	margin-left: 30%;
+	color: rgb(200,200,200);
+}
+textarea{
+	width: 55%;
+	height: 100px;
+}
+.submit-button{	
+	height: 40px;
+	width: 80%;
+	margin-left: 40px;
+	margin-bottom: 10px;
+	border:none;
+	border-radius: 10px; /*半径*/
+	text-align: center;
+	background-color: rgb(50,83,205);
+	color: white;
+	font-size: 18px;
+}
+.article{
+	background-color: rgb(255,255,255);	
+	margin: 20px 440px 20px 20px;
+	border: thin solid rgb(200,200,200);
+	padding: 20px;
+}
+.article ul{
+	list-style-type: none;
+}
+
+.article li div{
+	float:left;
+	border:1px solid black;
+	margin: 10px;
+}
+.fig{
+	display: inline;
+	text-align: left;
+	border: 2px solid red;
+	
+}
+.clear-float{
+	overflow: auto;
+}
+.table1{
+	width: 100%;
+	line-height: 30px;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+.table1 thead{
+	background-color: rgb(50,50,50);
+	color: white;
+	padding-left: 5px;
+}
+.table1 td{
+	border: thin solid rgb(222,222,222);
+}
+.table1 tfoot{
+	background-color: rgb(200,200,200);
+}
+
+
+
+
+

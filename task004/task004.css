@@ -1,0 +1,31 @@
+.back-gray{
+	background-color: #ccc;
+	width: 400px;
+	height: 200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.yellow-top{
+	background: #fc0; 
+	-moz-border-radius:50px; 
+	-webkit-border-radius:50px; 
+	border-radius: 0 0 50px 0;
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.yellow-bottom{
+	background: #fc0; 
+	-moz-border-radius:50px; 
+	-webkit-border-radius:50px; 
+	border-radius: 50px 0 0 0;
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
