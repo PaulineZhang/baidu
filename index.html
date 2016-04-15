@@ -2,105 +2,48 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>实践题 - 选项卡</title>
+    <title>百度前端训练</title>
     <style type="text/css">
-     /* CSS样式制作 */  
-     body {
-        font-family: "Microsoft Yahei";
-        font-size: 16px;
-        line-height: 1.5em; 
-        margin: 20px 0 0 20px;
-        padding: 0;   
-     }
-     .context{
-        border:thin solid blue;
-        border-top: none;
-        float: left;  
-        padding: 0 auto;  
-        width: 320px;
-        height: 120px;
-     }
-     ul{
-        list-style: none;
-        margin: 0;
-        padding: 0;
-     }
-     .title{
-        height: 25px;
-        width: 320px;
-        border-bottom: 2px solid blue;
-     }
-     .title li{
-        float: left;
-        margin-right: 10px;
-        border:thin solid blue;;
-     }
-     .clearfix{
-        overflow: auto;
-     }
-     .hide{
-        display: none;
-     }
-     .ul-margin{
-        margin-top: 10px;
-        margin-left: 15px;
-     }
     
-
-       
     </style>
     <script type="text/javascript">
-         
+    var m_status=[];
+	function getStatus( end){
+		for (var i = 6; i <=7; i++) {
+            var url="task00"+i+"/task"+i+".html";
+			var xmlhttp=new XMLHttpRequest();
+			xmlhttp.onreadystatechange=function(data){
+				if(data.target.readyState==4)
+				{
+					if(data.target.status==200)
+					{
+						console.log(i);
+					}
+				}
+			};
+			xmlhttp.open("GET",url,true);
+			xmlhttp.send(null);
+        }
+	}
+	
+	
     // JS实现选项卡切换
     window.onload=function(){     
-        var on_ul=document.getElementById("on");
-        var on_li=on_ul.getElementsByTagName("li");
-        var tags=document.getElementById("tags");
-        var dis_tags=tags.getElementsByTagName("div");
-        for (var i = on_li.length - 1; i >= 0; i--) {
-            on_li[i].index=i;
-            
+        var on_ul=document.getElementById("page-list");
+        var content='';
+        for (var i = 1; i <=20; i++) {
+            content+="<li><a href='task00"+i+"/task"+i+".html'>任务"+i+"</a></li>"
         }
-
+		on_ul.innerHTML=content;
+		getStatus(2);
     }
     
     </script>
  
 </head>
 <body>
-<!-- HTML页面布局 -->
-<div class="clearfix" id="tags">
-    <ul class="title" id="on">
-        <li class="click">房产</li>
-        <li>家居</li>
-        <li>二手房</li>
-    </ul>
+<ul id="page-list">
 
-    <div class="context">
-        <ul class="ul-margin">
-            <li>275万购昌平邻铁三居 总价20万买一居</li>
-            <li>200万内购五环三居 140万安家东三环</li>
-            <li>北京首现零首付楼盘 53万购东5环50平</li>
-            <li>京楼盘直降5000 中信府公园楼王现房</li>
-        </ul>
-    </div>
-    <div class="hide context">
-        <ul class="ul-margin">
-            <li>40平出租屋大改造 美少女的混搭小窝</li>
-            <li>经典清新简欧爱家 90平老房焕发新生</li>
-            <li>新中式的酷色温情 66平撞色活泼家居</li>
-            <li>瓷砖就像选好老婆 卫生间烟道的设计</li>
-        </ul>
-    </div>
-    <div class="hide context">
-        <ul class="ul-margin">
-             <li>通州豪华3居260万 二环稀缺2居250w甩</li>
-            <li>西3环通透2居290万 130万2居限量抢购</li>
-            <li>黄城根小学学区仅260万 121平70万抛!</li>
-            <li>独家别墅280万 苏州桥2居优惠价248万</li>
-        </ul>
-    </div>
-</div>
- 
+</ul>
 </body>
 </html>
