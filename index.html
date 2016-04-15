@@ -9,6 +9,7 @@
     <script type="text/javascript">
     var m_status=[];
 	function getStatus( end){
+		var re=/task(\d+).html/
 		for(var i=1;i<=end;i++)
 		{
 			m_status.push(0);
@@ -22,8 +23,8 @@
 				{
 					if(data.target.status==200)
 					{
-						m_status[id]=1;
-						console.log(id);
+						var items=data.target.responseURL.match(re);
+						console.log(items[1]);
 					}
 				}
 			};
@@ -38,7 +39,12 @@
         var on_ul=document.getElementById("page-list");
         var content='';
         for (var i = 1; i <=20; i++) {
-            content+="<li><a href='task00"+i+"/task"+i+".html' target='_blank'>任务"+i+"</a></li>"
+			var name;
+			if(i<10)
+				name="00"+i;
+			else
+				name="0"+i;
+            content+="<li><a href='task"+name+"/task"+i+".html' target='_blank'>任务"+i+"</a></li>"
         }
 		on_ul.innerHTML=content;
 		getStatus(20);
