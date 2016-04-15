@@ -12,12 +12,13 @@
 		for (var i = 6; i <=7; i++) {
             var url="task00"+i+"/task"+i+".html";
 			var xmlhttp=new XMLHttpRequest();
+			var id=i;
 			xmlhttp.onreadystatechange=function(data){
 				if(data.target.readyState==4)
 				{
 					if(data.target.status==200)
 					{
-						console.log(i);
+						console.log(id);
 					}
 				}
 			};
