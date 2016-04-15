@@ -15,7 +15,8 @@
 			m_status.push(0);
 		}
 		for (var i = 1; i <=end; i++) {
-            var url="task00"+i+"/task"+i+".html";
+			var name=i<10?"00"+i:"0"+i;
+            var url="task"+name+"/task"+i+".html";
 			var xmlhttp=new XMLHttpRequest();
 			var id=i;
 			xmlhttp.onreadystatechange=function(data){
@@ -46,7 +47,7 @@
 				name="00"+i;
 			else
 				name="0"+i;
-            content+="<li><a href='task"+name+"/task"+i+".html' target='_blank'>任务"+i+"</a><span id='s"+i+"'></span></li>"
+            content+="<li><a href='task"+name+"/task"+i+".html' target='_blank'>任务"+i+"<span id='s"+i+"'></span></a></li>"
         }
 		on_ul.innerHTML=content;
 		getStatus(20);
