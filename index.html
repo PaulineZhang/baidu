@@ -21,10 +21,12 @@
 			xmlhttp.onreadystatechange=function(data){
 				if(data.target.readyState==4)
 				{
+					var id=data.target.responseURL.match(re)[1];
 					if(data.target.status==200)
 					{
-						var items=data.target.responseURL.match(re);
-						console.log(items[1]);
+						document.getElementById('s'+id).innerHTML='(done)';
+					}else{
+						document.getElementById('s'+id).innerHTML='(undo!)';
 					}
 				}
 			};
@@ -44,7 +46,7 @@
 				name="00"+i;
 			else
 				name="0"+i;
-            content+="<li><a href='task"+name+"/task"+i+".html' target='_blank'>任务"+i+"</a></li>"
+            content+="<li><a href='task"+name+"/task"+i+".html' target='_blank'>任务"+i+"</a><span id='s"+i+"'></span></li>"
         }
 		on_ul.innerHTML=content;
 		getStatus(20);
