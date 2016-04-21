@@ -1,0 +1,13 @@
+.chart{
+	width: 96%;
+	min-width: 500px;
+	height: 600px;
+	border:2px solid #ccc;
+	margin: 20px auto;
+	position: relative;
+}
+.chart div{	
+	position:absolute;
+	bottom: 0px;
+	flex: 1;
+}
