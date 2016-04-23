@@ -9,6 +9,11 @@ function numLimit(num){
 		alert("元素过多，不允许输入");
 		return 0;
 	}
+	var reg=/^\d+$/;
+	if (!reg.test(num)) {
+		alert("请输入数字");
+		return 0;
+	}
 	if (num<10||num>100) {
 		alert("请输入的数字确保在10-100之间");
 		return 0;
