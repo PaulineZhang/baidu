@@ -1,0 +1,23 @@
+body{
+    margin: 20px auto;
+    width: 800px;
+}
+.interface{
+
+}
+input{
+    width: 80px;
+}
+.dis{
+	overflow: auto;
+    margin-top: 30px;
+    height: 600px;
+    border:2px solid #ccc;
+    position: relative;
+}
+.dis div{
+	background-color: #339999;
+	padding: 10px;
+	margin: 10px 0 0 10px;
+    float: left;
+}
