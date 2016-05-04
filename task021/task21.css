@@ -1,0 +1,36 @@
+body{
+    margin: 30px auto 0 auto;
+    width: 800px;
+    font-size: 20px;
+    font-family: "Microsoft Yahei";
+}
+span{
+    font-weight: bold;
+}
+.tag-display, .interest-display{
+	overflow: auto;
+    margin-top:30px;   
+    position: relative;
+}
+.tag-display div{
+	background-color: rgb(139,199,249);
+	padding: 10px;
+	margin: 10px 0 0 10px;
+    float: left;
+    color: white;
+}
+.sure{
+    margin-top: 10px;
+}
+.interest{
+    width: 365px;
+    height: 100px;
+    margin-top: 30px;
+}
+.interest-display div{
+    background-color: rgb(139,199,249);
+    padding: 10px;
+    margin: 10px 0 0 10px;
+    float: left;
+    color: white;
+}
