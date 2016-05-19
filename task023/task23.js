@@ -3,9 +3,10 @@ var breadthTravel=document.getElementById('breadth-travel');
 var depthSearch=document.getElementById('depth-search');
 var breadthSearch=document.getElementById('breadth-search');
 
-var rootNode=document.getElementsByClassName('root')[0];
 
+var rootNode=document.getElementsByClassName('root')[0];
 var treeArr=new Array();
+var brothersNode=new Array();
 
 depthTravel.onclick=function(){
 	DFS(rootNode);
@@ -14,6 +15,14 @@ depthTravel.onclick=function(){
 breadthTravel.onclick=function(){
 	BFS(rootNode);
 	Render();
+}
+depthSearch.onclick=function(){
+	DFS(rootNode);
+	RenderText();
+}
+breadthSearch.onclick=function(){
+	BFS(rootNode);
+	RenderText();
 }
 
 function Render(){
@@ -37,6 +46,35 @@ function Render(){
 	}
 }
 
+function RenderText(){
+	var text=document.getElementById('search').value;
+	var i=0,len=treeArr.length;
+	var timer=setInterval(RenderChosen,500);
+	function RenderChosen(){
+		if (i<len) {
+			if (i>0&&treeArr[i-1].innerText.split(' ',1)[0]!=text) {
+				treeArr[i-1].style.backgroundColor='white';
+			}
+			if (treeArr[i].innerText.split(' ',1)[0]==text) {
+				treeArr[i].style.backgroundColor='#ff9999';
+			}
+			else{
+				treeArr[i].style.backgroundColor='#99ccff';
+			}
+			i++; 
+		}
+		else{
+			clearInterval(timer);
+			if (treeArr[i-1].innerText.split(' ',1)[0]!=text) {
+				treeArr[len-1].style.backgroundColor='white';
+			}
+			
+			treeArr=[];
+			return;
+		}
+	}
+}
+
 //深度优先遍历
 function DFS(node) {
 	if (node!=null) {
@@ -49,18 +87,16 @@ function DFS(node) {
 
 //广度优先遍历
 function BFS(node){
-	if (node!=null) {
-		treeArr.push(node);
-		console.log(node.innerText.split(' ',1));
-		if (node!=rootNode) {
-			BFS(node.nextElementSibling);
-			for (var i = 0; i < node.parentNode.childElementCount; i++) {
-				BFS(node.parentNode.nextElementSibling.firstElementChild);
-			}
-		}
-		else{
-			BFS(node.firstElementChild);
-		}
-		
+	if (node==rootNode) {
+		treeArr.push(rootNode);
+		brothersNode.push(rootNode);
 	}
+	for (var i = 0; i < node.childElementCount; i++) {
+		treeArr.push(node.children[i]);
+		brothersNode.push(node.children[i]);			
+	}	
+	var del=brothersNode.shift();
+	if (brothersNode.length) {
+		BFS(brothersNode[0]);
+	}	
 }
