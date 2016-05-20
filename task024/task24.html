@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>task 24</title>
+	<link rel="stylesheet" type="text/css" href="task24.css">
+</head>
+<body>
+
+<div class="root">
+	life
+	<div class="child-1">
+		food
+		<div class="child-2">
+			fruit
+			<div class="child-3">apple</div>
+			<div class="child-3">banana</div>
+			<div class="child-3">pear</div>
+			<div class="child-3">apple</div>
+		</div>
+		<div class="child-2">
+			grass
+		</div>
+		<div class="child-2">
+			vegetable
+			<div class="child-3">cucumber</div>
+			<div class="child-3">celery</div>
+		</div>
+	</div>
+	<div class="child-1">
+		school
+		<div class="child-2">
+			garten
+			<div class="child-3">Math</div>
+			<div class="child-3">Chinese</div>
+			<div class="child-3">English</div>
+		</div>
+		<div class="child-2">
+			university
+			<div class="child-3">
+				test
+				<div class="child-4">paper</div>
+			</div>
+			<div class="child-3">paper</div>
+		</div>
+	</div>
+	<div class="child-1">
+		sleep
+	</div>
+</div>
+<div class="button">
+	<button id="depth-travel">深度优先遍历</button>
+	<button id="breadth-travel">广度优先遍历</button>
+	<input type="text" id="search" class="search">
+	<button id="depth-search">深度优先收索</button>
+	<button id="breadth-search">广度优先收索</button>
+</div>
+<div class="button">
+	<button id="delete">删除节点</button>
+	<input type="text" id="add-text" class="search">
+	<button id="add">添加子节点</button>
+</div>
+<div>
+	<p>单击选中节点，再次单击取消选中</p>
+</div>
+<script type="text/javascript" src="task24.js"></script>
+</body>
+</html>
